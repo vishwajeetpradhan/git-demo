@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Legends of Wheels</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Vanilla+Whale&family=Hellbone&display=swap" rel="stylesheet"> 
+
+  <!-- Added Hellbone font link -->
+
+  <style>
+    @font-face {
+      font-family: 'Hellbone';
+      src: url('https://d4ioixhxumiv0.cloudfront.net/r2611w%2Ffile%2Ff6c3ba2d86accbd17125ebb74c70266e_c4ebac3df4df9d29d85b12a7b5bb5b24.otf?response-content-disposition=attachment%3Bfilename%3D%22Hellbone-Demo1.otf%22%3B&response-content-encoding=binary&Expires=1728140339&Signature=NvoUyslqI8ExnGGlqiKp5~XLA~iHOAqW2rQtFsTbM1Z02aY5U9aBKGLhuT0HvNUHShCth0SQkjgVCcH5189EEge7eJoXTyD4afX1e73viYcv5f9bwJfQF6UcZYuJK-tmMkNHwES5Jz7GIYO0sH67wOQ7SwE6l4gz69R2CJDiaa9fMLtHMC4yDBjDwH7ug3BYvM-3Ohmmul0vP2DSn1g1L9JFQkPO1gl89q1ITHgD6qkyAaeycYGk~oC03-o3GtFOkQVfRCt98zZsSIMrwT~kNQWtwFStjcKkZeN4GAzCLTbt8OEy8g~EXZXolabU9YC98AF205OryLCzUMvoQIGS2A__&Key-Pair-Id=APKAJT5WQLLEOADKLHBQ') format('opentype');
+      font-weight: normal;
+      font-style: normal;
+    }
+    body {
+      position: relative;
+    }
+
+    /* Make the navbar sticky */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 1030;
+    }
+
+    /* Reduce the size of the logo */
+    .navbar-brand img {
+      max-height: 40px; /* Smaller logo */
+    }
+
+    /* Container for the homepage */
+    .homepage {
+      height: 100vh;
+      background-color: #f8f9fa;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    /* Adjusted font size for homepage title */
+    .homepage h1 {
+      font-size: 2.5rem; /* Reduced font size */
+      font-family: 'Hellbone', cursive; /* Using Hellbone font */
+      color: red; /* Text color set to red */
+    }
+
+    .homepage p {
+      font-size: 1.2rem; /* Slightly smaller description text */
+      color: #333;
+    }
+
+    /* Responsive design */
+    @media (max-width: 768px) {
+      .homepage h1 {
+        font-size: 2rem; /* Even smaller on mobile */
+      }
+
+      .homepage p {
+        font-size: 1rem;
+      }
+    }
+
+    /* Add scroll offset to brand sections */
+    .section-scroll {
+      scroll-margin-top: 80px; /* Adjust this value according to your navbar height */
+    }
+
+    /* Optional: Add smooth scrolling */
+    html {
+      scroll-behavior: smooth;
+    }
+    @font-face {
+  font-family: 'Hellbone';
+  src: url('https://d4ioixhxumiv0.cloudfront.net/r2611w%2Ffile%2Ff6c3ba2d86accbd17125ebb74c70266e_c4ebac3df4df9d29d85b12a7b5bb5b24.otf?response-content-disposition=attachment%3Bfilename%3D%22Hellbone-Demo1.otf%22%3B&response-content-encoding=binary&Expires=1728156764&Signature=OqQyxjAvG5RSmgnkrzz9el7-8j0bFDxSkpbvWCv4FoV~A1jHMXAezkZmS1xtPa9JnOYHF4shgPapBMSB9K8t7WFnRplwIcupifIvvgXl25hV7swDj2wa5z4PnA0SW3AcTJ0Exq9u7mVGOL~6-5dGpdO39Wjnc2qa6BMWBJ0ymUmes~4NY4rKUqEJSXj--~NwFv2uOUvjUnrq5oQ8BnmpAnrP-ik9XUe9445GXtjtOF4rVe2DKKAzHhlDosd2mJd184SQbwMuquC~1~T8F8p5bHTfr0IxSQQot3UAqf33hlEcBQyHBkHR2CgU0frJjPEzc4VIUFskzC7gL-CS2y3DSQ__&Key-Pair-Id=APKAJT5WQLLEOADKLHBQ') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+  </style>
+</head>
+<body>
+   <!-- Navbar with Logo (sticky) -->
+   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <img src="https://i.postimg.cc/jq9GKcF2/logofinal.jpg" alt="Legends Logo"> <!-- Adjusted logo size -->
+        Legends On Wheels
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="subfolders/bmw_showcase.html" class="nav-link">BMW Showcase</a>
+          </a> <!-- Add this line -->
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div id="carBrandCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      
+      <!-- BMW Slide -->
+      <div class="carousel-item active">
+        <a href="#bmw">
+          <img src="https://via.placeholder.com/800x400.png?text=BMW" class="d-block w-100" alt="BMW">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>BMW</h5>
+            <p>BMW, founded in 1916, is known for its luxury vehicles, motorcycles, and engines. The brand excels in performance and innovation.</p>
+          </div>
+        </a>
+      </div>
+  
+      <!-- Rolls Royce Slide -->
+      <div class="carousel-item">
+        <a href="#rolls-royce">
+          <img src="https://via.placeholder.com/800x400.png?text=Rolls+Royce" class="d-block w-100" alt="Rolls Royce">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Rolls Royce</h5>
+            <p>Founded in 1906, Rolls Royce is synonymous with luxury, craftsmanship, and attention to detail, known for its high-end cars.</p>
+          </div>
+        </a>
+      </div>
+  
+      <!-- Land Rover Slide -->
+      <div class="carousel-item">
+        <a href="#land-rover">
+          <img src="https://via.placeholder.com/800x400.png?text=Land+Rover" class="d-block w-100" alt="Land Rover">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Land Rover</h5>
+            <p>Land Rover, established in 1948, specializes in four-wheel-drive vehicles, renowned for durability and off-road capability.</p>
+          </div>
+        </a>
+      </div>
+  
+      <!-- Aston Martin Slide -->
+      <div class="carousel-item">
+        <a href="#aston-martin">
+          <img src="https://via.placeholder.com/800x400.png?text=Aston+Martin" class="d-block w-100" alt="Aston Martin">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Aston Martin</h5>
+            <p>Founded in 1913, Aston Martin is famous for its luxury sports cars, combining elegance with high performance.</p>
+          </div>
+        </a>
+      </div>
+  
+      <!-- Ferrari Slide -->
+      <div class="carousel-item">
+        <a href="#ferrari">
+          <img src="https://via.placeholder.com/800x400.png?text=Ferrari" class="d-block w-100" alt="Ferrari">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Ferrari</h5>
+            <p>Ferrari, founded in 1939, is an iconic sports car manufacturer known for speed, racing heritage, and Italian craftsmanship.</p>
+          </div>
+        </a>
+      </div>
+  
+      <!-- Ford Slide -->
+      <div class="carousel-item">
+        <a href="#ford">
+          <img src="https://via.placeholder.com/800x400.png?text=Ford" class="d-block w-100" alt="Ford">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Ford</h5>
+            <p>Ford, established in 1903, revolutionized the automobile industry with mass production, notably through the Model T.</p>
+          </div>
+        </a>
+      </div>
+  
+      <!-- Volkswagen Slide -->
+      <div class="carousel-item">
+        <a href="#volkswagen">
+          <img src="https://via.placeholder.com/800x400.png?text=Volkswagen" class="d-block w-100" alt="Volkswagen">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Volkswagen</h5>
+            <p>Founded in 1937, Volkswagen is known for its reliable, affordable cars like the Beetle and Golf, and has a wide global reach.</p>
+          </div>
+        </a>
+      </div>
+  
+      <!-- Dodge Slide -->
+      <div class="carousel-item">
+        <a href="#dodge">
+          <img src="https://via.placeholder.com/800x400.png?text=Dodge" class="d-block w-100" alt="Dodge">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Dodge</h5>
+            <p>Founded in 1900, Dodge is an American brand known for its performance vehicles, including muscle cars and trucks.</p>
+          </div>
+        </a>
+      </div>
+  
+      <!-- Peugeot Slide -->
+      <div class="carousel-item">
+        <a href="#peugeot">
+          <img src="https://via.placeholder.com/800x400.png?text=Peugeot" class="d-block w-100" alt="Peugeot">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Peugeot</h5>
+            <p>Peugeot, established in 1810, is one of the oldest car manufacturers and is known for its French style and reliability.</p>
+          </div>
+        </a>
+      </div>
+  
+      <!-- TATA Slide -->
+      <div class="carousel-item">
+        <a href="#tata">
+          <img src="https://via.placeholder.com/800x400.png?text=TATA" class="d-block w-100" alt="TATA">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>TATA</h5>
+            <p>Tata Motors, founded in 1945, is India's largest automotive manufacturer and has expanded its global presence significantly.</p>
+          </div>
+        </a>
+      </div>
+  
+      <!-- Bugatti Slide -->
+      <div class="carousel-item">
+        <a href="#bugatti">
+          <img src="https://via.placeholder.com/800x400.png?text=Bugatti" class="d-block w-100" alt="Bugatti">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Bugatti</h5>
+            <p>Founded in 1909, Bugatti is known for producing some of the most luxurious and fastest cars in the world, including the Veyron.</p>
+          </div>
+        </a>
+      </div>
+  
+      <!-- Porsche Slide -->
+      <div class="carousel-item">
+        <a href="#porsche">
+          <img src="https://via.placeholder.com/800x400.png?text=Porsche" class="d-block w-100" alt="Porsche">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Porsche</h5>
+            <p>Porsche, founded in 1931, is a German brand synonymous with high-performance sports cars, including the iconic 911.</p>
+          </div>
+        </a>
+      </div>
+  
+      <!-- Lamborghini Slide -->
+      <div class="carousel-item">
+        <a href="#lamborghini">
+          <img src="https://via.placeholder.com/800x400.png?text=Lamborghini" class="d-block w-100" alt="Lamborghini">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Lamborghini</h5>
+            <p>Founded in 1963, Lamborghini is known for its extravagant, high-performance sports cars with bold designs.</p>
+          </div>
+        </a>
+      </div>
+  
+      <!-- Mercedes Slide -->
+      <div class="carousel-item">
+        <a href="#mercedes">
+          <img src="https://via.placeholder.com/800x400.png?text=Mercedes" class="d-block w-100" alt="Mercedes">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Mercedes</h5>
+            <p>Mercedes-Benz, established in 1926, is a German luxury car manufacturer renowned for its innovation and engineering excellence.</p>
+          </div>
+        </a>
+      </div>
+  
+    </div>
+    
+    <!-- Controls -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#carBrandCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carBrandCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+  
+ 
+  <!-- Main Container -->
+  <div class="container mt-5">
+    <!-- BMW Section -->
+<section id="bmw" class="mt-5">
+  <h2 class="text-center">BMW Models</h2>
+  <div class="row">
+    <!-- BMW M2 -->
+    <div class="col-lg-4 col-md-6 mb-4">
+      <div class="card">
+        <a href="bmw_m2_details.html">
+          <img src="https://via.placeholder.com/400x300?text=BMW+M2" class="card-img-top car-image" alt="BMW M2">
+        </a>
+        <div class="card-body">
+          <h5 class="card-title car-title">BMW M2</h5>
+          <p class="car-description">Year Introduced: 2015</p>
+          <p class="car-description">Exterior: Sporty, aggressive with wide fenders</p>
+          <p class="car-description">Chassis: Lightweight with M-Division upgrades</p>
+          <p class="car-description">Headlights: LED with adaptive features</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- BMW M3 -->
+    <div class="col-lg-4 col-md-6 mb-4">
+      <div class="card">
+        <a href="bmw_m3_details.html">
+          <img src="https://via.placeholder.com/400x300?text=BMW+M3" class="card-img-top car-image" alt="BMW M3">
+        </a>
+        <div class="card-body">
+          <h5 class="card-title car-title">BMW M3</h5>
+          <p class="car-description">Year Introduced: 1986</p>
+          <p class="car-description">Exterior: Aggressive and aerodynamic</p>
+          <p class="car-description">Chassis: Carbon fiber roof and rear spoiler</p>
+          <p class="car-description">Headlights: Iconic dual-round LED headlights</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- BMW M4 -->
+    <div class="col-lg-4 col-md-6 mb-4">
+      <div class="card">
+        <a href="bmw_m4_details.html">
+          <img src="https://via.placeholder.com/400x300?text=BMW+M4" class="card-img-top car-image" alt="BMW M4">
+        </a>
+        <div class="card-body">
+          <h5 class="card-title car-title">BMW M4</h5>
+          <p class="car-description">Year Introduced: 2014</p>
+          <p class="car-description">Exterior: Sleek and bold with flared arches</p>
+          <p class="car-description">Chassis: Reinforced with M sports suspension</p>
+          <p class="car-description">Headlights: Laser headlights with high-beam assist</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+    <!-- Rolls-Royce Section -->
+    <section id="rolls-royce" class="mt-5">
+      <h2 class="text-center">Rolls-Royce Models</h2>
+      <div class="row">
+        <div class="col-lg-3 col-md-6 mb-4">
+          <div class="card">
+            <img src="https://r2.flux1.ai/result-07bjJbZen8.webp" class="card-img-top" alt="Rolls-Royce Silver Ghost (1907-1926)">
+            <div class="card-body">
+              <h5 class="card-title">Rolls-Royce Silver Ghost (1907-1926)</h5>
+              <p class="card-text">Rolls-Royce Silver Ghost (1907-1926)</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-4">
+          <div class="card">
+            <img src="https://r2.flux1.ai/result-AW7wAglri8.webp" class="card-img-top" alt="Rolls-Royce Phantom I (1925-1931)">
+            <div class="card-body">
+              <h5 class="card-title">Rolls-Royce Phantom I (1925-1931)</h5>
+              <p class="card-text">Rolls-Royce Phantom I (1925-1931)</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-4">
+          <div class="card">
+            <img src="https://r2.flux1.ai/result-foMKfxFpa3.webp" class="card-img-top" alt="Rolls-Royce Phantom II (1929-1936)">
+            <div class="card-body">
+              <h5 class="card-title">Rolls-Royce Phantom II (1929-1936)</h5>
+              <p class="card-text">Rolls-Royce Phantom II (1929-1936)</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-4">
+          <div class="card">
+            <img src="https://r2.flux1.ai/result-odStCvA5dB.webp" class="card-img-top" alt="Rolls-Royce Phantom III (1936-1939)">
+            <div class="card-body">
+              <h5 class="card-title">Rolls-Royce Phantom III (1936-1939)</h5>
+              <p class="card-text">Rolls-Royce Phantom III (1936-1939)</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-4">
+          <div class="card">
+            <img src="https://r2.flux1.ai/result-4a3QfDoWEH.webp" class="card-img-top" alt="Rolls-Royce Silver Wraith (1946-1958)">
+            <div class="card-body">
+              <h5 class="card-title">Rolls-Royce Silver Wraith (1946-1958)</h5>
+              <p class="card-text">Rolls-Royce Silver Wraith (1946-1958)</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Land Rover Section -->
+    <section id="land-rover" class="mt-5">
+      <h2 class="text-center">Land Rover Models</h2>
+      <div class="row">
+        <div class="col-lg-3 col-md-6 mb-4">
+          <div class="card">
+            <img src="https://via.placeholder.com/300x200.png?text=Land+Rover+Series+I+(1948-1958)" class="card-img-top" alt="Land Rover Series I (1948-1958)">
+            <div class="card-body">
+              <h5 class="card-title">Land Rover Series I (1948-1958)</h5>
+              <p class="card-text">Land Rover Series I (1948-1958)</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-4">
+          <div class="card">
+            <img src="https://via.placeholder.com/300x200.png?text=Land+Rover+Series+II+(1958-1961)" class="card-img-top" alt="Land Rover Series II (1958-1961)">
+            <div class="card-body">
+              <h5 class="card-title">Land Rover Series II (1958-1961)</h5>
+              <p class="card-text">Land Rover Series II (1958-1961)</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-4">
+          <div class="card">
+            <img src="https://via.placeholder.com/300x200.png?text=Land+Rover+Series+IIA+(1961-1971)" class="card-img-top" alt="Land Rover Series IIA (1961-1971)">
+            <div class="card-body">
+              <h5 class="card-title">Land Rover Series IIA (1961-1971)</h5>
+              <p class="card-text">Land Rover Series IIA (1961-1971)</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-4">
+          <div class="card">
+            <img src="https://via.placeholder.com/300x200.png?text=Land+Rover+Series+III+(1971-1985)" class="card-img-top" alt="Land Rover Series III (1971-1985)">
+            <div class="card-body">
+              <h5 class="card-title">Land Rover Series III (1971-1985)</h5>
+              <p class="card-text">Land Rover Series III (1971-1985)</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-4">
+          <div class="card">
+            <img src="https://via.placeholder.com/300x200.png?text=Range+Rover+Classic+(1970-1996)" class="card-img-top" alt="Range Rover Classic (1970-1996)">
+            <div class="card-body">
+              <h5 class="card-title">Range Rover Classic (1970-1996)</h5>
+              <p class="card-text">Range Rover Classic (1970-1996)</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Aston Martin Section -->
+    <section id="aston-martin" class="mt-5">
+      <h2 class="text-center">Aston Martin Models</h2>
+      <div class="row">
+        <div class="col-lg-3 col-md-6 mb-4">
+          <div class="card">
+            <img src="https://via.placeholder.com/300x200.png?text=Aston+Martin+DB2/4+(1953-1957)" class="card-img-top" alt="Aston Martin DB2/4 (1953-1957)">
+            <div class="card-body">
+              <h5 class="card-title">Aston Martin DB2/4 (1953-1957)</h5>
+              <p class="card-text">Aston Martin DB2/4 (1953-1957)</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-4">
+          <div class="card">
+
+            <img src="https://via.placeholder.com/300x200.png?text=Aston+Martin+DB4+(1958-1963)" class="card-img-top" alt="Aston Martin DB4 (1958-1963)">
+            <div class="card-body">
+              <h5 class="card-title">Aston Martin DB4 (1958-1963)</h5>
+              <p class="card-text">Aston Martin DB4 (1958-1963)</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-lg-3 col-md-6 mb-4">
+          <div class="card">
+            <img src="https://via.placeholder.com/300x200.png?text=Aston+Martin+DB6+(1965-1970)" class="card-img-top" alt="Aston Martin DB6 (1965-1970)">
+            <div class="card-body">
+              <h5 class="card-title">Aston Martin DB6 (1965-1970)</h5>
+              <p class="card-text">Aston Martin DB6 (1965-1970)</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-lg-3 col-md-6 mb-4">
+          <div class="card">
+            <img src="https://via.placeholder.com/300x200.png?text=Aston+Martin+DBS+(1967-1972)" class="card-img-top" alt="Aston Martin DBS (1967-1972)">
+            <div class="card-body">
+              <h5 class="card-title">Aston Martin DBS (1967-1972)</h5>
+              <p class="card-text">Aston Martin DBS (1967-1972)</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-lg-3 col-md-6 mb-4">
+          <div class="card">
+            <img src="https://via.placeholder.com/300x200.png?text=Aston+Martin+V8+Vantage+(1977-1989)" class="card-img-top" alt="Aston Martin V8 Vantage (1977-1989)">
+            <div class="card-body">
+              <h5 class="card-title">Aston Martin V8 Vantage (1977-1989)</h5>
+              <p class="card-text">Aston Martin V8 Vantage (1977-1989)</p>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </section>
+    
+    <!-- Ferrari Section -->
+    <section id="ferrari" class="mt-5">
+      <h2 class="text-center">Ferrari Models</h2>
+      <div class="row">
+    
+        <div class="col-lg-3 col-md-6 mb-4">
+          <div class="card">
+            <img src="https://via.placeholder.com/300x200.png?text=Ferrari+250+GTO+(1962-1964)" class="card-img-top" alt="Ferrari 250 GTO (1962-1964)">
+            <div class="card-body">
+              <h5 class="card-title">Ferrari 250 GTO (1962-1964)</h5>
+              <p class="card-text">Ferrari 250 GTO (1962-1964)</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-lg-3 col-md-6 mb-4">
+          <div class="card">
+            <img src="https://via.placeholder.com/300x200.png?text=Ferrari+250+Testa+Rossa+(1957-1961)" class="card-img-top" alt="Ferrari 250 Testa Rossa (1957-1961)">
+            <div class="card-body">
+              <h5 class="card-title">Ferrari 250 Testa Rossa (1957-1961)</h5>
+              <p class="card-text">Ferrari 250 Testa Rossa (1957-1961)</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-lg-3 col-md-6 mb-4">
+          <div class="card">
+            <img src="https://via.placeholder.com/300x200.png?text=Ferrari+275+GTB/4+(1964-1968)" class="card-img-top" alt="Ferrari 275 GTB/4 (1964-1968)">
+            <div class="card-body">
+              <h5 class="card-title">Ferrari 275 GTB/4 (1964-1968)</h5>
+              <p class="card-text">Ferrari 275 GTB/4 (1964-1968)</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-lg-3 col-md-6 mb-4">
+          <div class="card">
+            <img src="https://via.placeholder.com/300x200.png?text=Ferrari+Dino+246+GT+(1969-1974)" class="card-img-top" alt="Ferrari Dino 246 GT (1969-1974)">
+            <div class="card-body">
+              <h5 class="card-title">Ferrari Dino 246 GT (1969-1974)</h5>
+              <p class="card-text">Ferrari Dino 246 GT (1969-1974)</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-lg-3 col-md-6 mb-4">
+          <div class="card">
+            <img src="https://via.placeholder.com/300x200.png?text=Ferrari+365+GTB/4+Daytona+(1968-1973)" class="card-img-top" alt="Ferrari 365 GTB/4 Daytona (1968-1973)">
+            <div class="card-body">
+              <h5 class="card-title">Ferrari 365 GTB/4 Daytona (1968-1973)</h5>
+              <p class="card-text">Ferrari 365 GTB/4 Daytona (1968-1973)</p>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </section>
+    
+    <!-- Ford Section -->
+    <section id="ford" class="mt-5">
+      <h2 class="text-center">Ford Models</h2>
+      <div class="row">
+    
+        <div class="col-lg-3 col-md-6 mb-4">
+          <div class="card">
+            <img src="https://via.placeholder.com/300x200.png?text=Ford+Model+T+(1908-1927)" class="card-img-top" alt="Ford Model T (1908-1927)">
+            <div class="card-body">
+              <h5 class="card-title">Ford Model T (1908-1927)</h5>
+              <p class="card-text">Ford Model T (1908-1927)</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-lg-3 col-md-6 mb-4">
+          <div class="card">
+            <img src="https://via.placeholder.com/300x200.png?text=Ford+Model+A+(1927-1931)" class="card-img-top" alt="Ford Model A (1927-1931)">
+            <div class="card-body">
+              <h5 class="card-title">Ford Model A (1927-1931)</h5>
+              <p class="card-text">Ford Model A (1927-1931)</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-lg-3 col-md-6 mb-4">
+          <div class="card">
+            <img src="https://via.placeholder.com/300x200.png?text=Ford+Thunderbird+(1955-1997)" class="card-img-top" alt="Ford Thunderbird (1955-1997)">
+            <div class="card-body">
+              <h5 class="card-title">Ford Thunderbird (1955-1997)</h5>
+              <p class="card-text">Ford Thunderbird (1955-1997)</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-lg-3 col-md-6 mb-4">
+          <div class="card">
+            <img src="https://via.placeholder.com/300x200.png?text=Ford+Mustang+(1964-Present)" class="card-img-top" alt="Ford Mustang (1964-Present)">
+            <div class="card-body">
+              <h5 class="card-title">Ford Mustang (1964-Present)</h5>
+              <p class="card-text">Ford Mustang (1964-Present)</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-lg-3 col-md-6 mb-4">
+          <div class="card">
+            <img src="https://via.placeholder.com/300x200.png?text=Ford+GT40+(1964-1969)" class="card-img-top" alt="Ford GT40 (1964-1969)">
+            <div class="card-body">
+              <h5 class="card-title">Ford GT40 (1964-1969)</h5>
+              <p class="card-text">Ford GT40 (1964-1969)</p>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </section>
+    
+    <!-- Volkswagen Section -->
+    <section id="volkswagen" class="mt-5">
+      <h2 class="text-center">Volkswagen Models</h2>
+      <div class="row">
+    
+        <div class="col-lg-3 col-md-6 mb-4">
+          <div class="card">
+            <img src="https://via.placeholder.com/300x200.png?text=Volkswagen+Beetle+(1938-2003)" class="card-img-top" alt="Volkswagen Beetle (1938-2003)">
+            <div class="card-body">
+              <h5 class="card-title">Volkswagen Beetle (1938-2003)</h5>
+              <p class="card-text">Volkswagen Beetle (1938-2003)</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-lg-3 col-md-6 mb-4">
+          <div class="card">
+            <img src="https://via.placeholder.com/300x200.png?text=Volkswagen+Type+2+(1950-1979)" class="card-img-top" alt="Volkswagen Type 2 (1950-1979)">
+            <div class="card-body">
+              <h5 class="card-title">Volkswagen Type 2 (1950-1979)</h5>
+              <p class="card-text">Volkswagen Type 2 (1950-1979)</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-lg-3 col-md-6 mb-4">
+          <div class="card">
+            <img src="https://via.placeholder.com/300x200.png?text=Volkswagen+Karmann+Ghia+(1955-1974)" class="card-img-top" alt="Volkswagen Karmann Ghia (1955-1974)">
+            <div class="card-body">
+              <h5 class="card-title">Volkswagen Karmann Ghia (1955-1974)</h5>
+              <p class="card-text">Volkswagen Karmann Ghia (1955-1974)</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-lg-3 col-md-6 mb-4">
+          <div class="card">
+            <img src="https://via.placeholder.com/300x200.png?text=Volkswagen+Golf+Mk1+(1974-1983)" class="card-img-top" alt="Volkswagen Golf Mk1 (1974-1983)">
+            <div class="card-body">
+              <h5 class="card-title">Volkswagen Golf Mk1 (1974-1983)</h5>
+              <p class="card-text">Volkswagen Golf Mk1 (1974-1983)</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-lg-3 col-md-6 mb-4">
+          <div class="card">
+            <img src="https://via.placeholder.com/300x200.png?text=Volkswagen+Scirocco+(1974-1992)" class="card-img-top" alt="Volkswagen Scirocco (1974-1992)">
+            <div class="card-body">
+              <h5 class="card-title">Volkswagen Scirocco (1974-1992)</h5>
+              <p class="card-text">Volkswagen Scirocco (1974-1992)</p>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </section>
+    
+    <!-- TATA Section -->
+    <section id="tata" class="mt-5">
+      <h2 class="text-center">TATA Models</h2>
+      <div class="row">
+    
+        <div class="col-lg-3 col-md-6 mb-4">
+          <div class="card">
+            <img src="https://via.placeholder.com/300x200.png?text=Tata+Sierra" class="card-img-top" alt="Tata Sierra">
+            <div class="card-body">
+              <h5 class="card-title">Tata Sierra</h5>
+              <p class="card-text">Tata Sierra</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-lg-3 col-md-6 mb-4">
+          <div class="card">
+            <img src="https://via.placeholder.com/300x200.png?text=Tata+Estate" class="card-img-top" alt="Tata Estate">
+            <div class="card-body">
+              <h5 class="card-title">Tata Estate</h5>
+              <p class="card-text">Tata Estate</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-lg-3 col-md-6 mb-4">
+          <div class="card">
+            <img src="https://via.placeholder.com/300x200.png?text=Tata+Sumo" class="card-img-top" alt="Tata Sumo">
+            <div class="card-body">
+              <h5 class="card-title">Tata Sumo</h5>
+              <p class="card-text">Tata Sumo</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-lg-3 col-md-6 mb-4">
+          <div class="card">
+            <img src="https://via.placeholder.com/300x200.png?text=Tata+Indigo" class="card-img-top" alt="Tata Indigo">
+            <div class="card-body">
+              <h5 class="card-title">Tata Indigo</h5>
+              <p class="card-text">Tata Indigo</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-lg-3 col-md-6 mb-4">
+          <div class="card">
+            <img src="https://via.placeholder.com/300x200.png?text=Tata+Indica" class="card-img-top" alt="Tata Indica">
+            <div class="card-body">
+              <h5 class="card-title">Tata Indica</h5>
+              <p class="card-text">Tata Indica</p>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </section>
+    
+    <!-- Porsche Section -->
+    <section id="porsche" class="mt-5">
+      <h2 class="text-center">Porsche Models</h2>
+      <div class="row">
+    
+        <div class="col-lg-3 col-md-6 mb-4">
+          <div class="card">
+            <img src="https://via.placeholder.com/300x200.png?text=Porsche+356+(1948-1965)" class="card-img-top" alt="Porsche 356 (1948-1965)">
+            <div class="card-body">
+              <h5 class="card-title">Porsche 356 (1948-1965)</h5>
+              <p class="card-text">Porsche 356 (1948-1965)</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-lg-3 col-md-6 mb-4">
+          <div class="card">
+            <img src="https://via.placeholder.com/300x200.png?text=Porsche+550+Spyder+(1953-1956)" class="card-img-top" alt="Porsche 550 Spyder (1953-1956)">
+            <div class="card-body">
+              <h5 class="card-title">Porsche 550 Spyder (1953-1956)</h5>
+              <p class="card-text">Porsche 550 Spyder (1953-1956)</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-lg-3 col-md-6 mb-4">
+          <div class="card">
+            <img src="https://via.placeholder.com/300x200.png?text=Porsche+911+(1964-present)" class="card-img-top" alt="Porsche 911 (1964-present)">
+            <div class="card-body">
+              <h5 class="card-title">Porsche 911 (1964-present)</h5>
+              <p class="card-text">Porsche 911 (1964-present)</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-lg-3 col-md-6 mb-4">
+          <div class="card">
+            <img src="https://via.placeholder.com/300x200.png?text=Porsche+914+(1969-1976)" class="card-img-top" alt="Porsche 914 (1969-1976)">
+            <div class="card-body">
+              <h5 class="card-title">Porsche 914 (1969-1976)</h5>
+              <p class="card-text">Porsche 914 (1969-1976)</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-lg-3 col-md-6 mb-4">
+          <div class="card">
+            <img src="https://via.placeholder.com/300x200.png?text=Porsche+959+(1986-1989)" class="card-img-top" alt="Porsche 959 (1986-1989)">
+            <div class="card-body">
+              <h5 class="card-title">Porsche 959 (1986-1989)</h5>
+              <p class="card-text">Porsche 959 (1986-1989)</p>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </section>
+    
+    <!-- Lamborghini Section -->
+    <section id="lamborghini" class="mt-5">
+      <h2 class="text-center">Lamborghini Models</h2>
+      <div class="row">
+    
+        <div class="col-lg-3 col-md-6 mb-4">
+          <div class="card">
+            <img src="https://via.placeholder.com/300x200.png?text=Lamborghini+Miura+(1966-1973)" class="card-img-top" alt="Lamborghini Miura (1966-1973)">
+            <div class="card-body">
+              <h5 class="card-title">Lamborghini Miura (1966-1973)</h5>
+              <p class="card-text">Lamborghini Miura (1966-1973)</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-lg-3 col-md-6 mb-4">
+          <div class="card">
+            <img src="https://via.placeholder.com/300x200.png?text=Lamborghini+Countach+(1974-1990)" class="card-img-top" alt="Lamborghini Countach (1974-1990)">
+            <div class="card-body">
+              <h5 class="card-title">Lamborghini Countach (1974-1990)</h5>
+              <p class="card-text">Lamborghini Countach (1974-1990)</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-lg-3 col-md-6 mb-4">
+          <div class="card">
+            <img src="https://via.placeholder.com/300x200.png?text=Lamborghini+350+GT+(1964-1968)" class="card-img-top" alt="Lamborghini 350 GT (1964-1968)">
+            <div class="card-body">
+              <h5 class="card-title">Lamborghini 350 GT (1964-1968)</h5>
+              <p class="card-text">Lamborghini 350 GT (1964-1968)</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-lg-3 col-md-6 mb-4">
+          <div class="card">
+            <img src="https://via.placeholder.com/300x200.png?text=Lamborghini+Espada+(1968-1978)" class="card-img-top" alt="Lamborghini Espada (1968-1978)">
+            <div class="card-body">
+              <h5 class="card-title">Lamborghini Espada (1968-1978)</h5>
+              <p class="card-text">Lamborghini Espada (1968-1978)</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-lg-3 col-md-6 mb-4">
+          <div class="card">
+            <img src="https://via.placeholder.com/300x200.png?text=Lamborghini+Diablo+(1990-2001)" class="card-img-top" alt="Lamborghini Diablo (1990-2001)">
+            <div class="card-body">
+              <h5 class="card-title">Lamborghini Diablo (1990-2001)</h5>
+              <p class="card-text">Lamborghini Diablo (1990-2001)</p>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </section>
+    
+  
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 Legends of Wheels. All Rights Reserved.</p>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
